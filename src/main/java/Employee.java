@@ -11,6 +11,8 @@ public class Employee {
 
     public void setAddress(Address address) {
         System.out.println("Setter Injection of address");
+        // customisation
+        address.setCity("Bangalore");
         this.address = address;
     }
 
