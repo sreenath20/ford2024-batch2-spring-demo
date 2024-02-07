@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+    <bean name="employee" class="Employee" >
+        <property name="id" value="2"></property>
+        <property name="name" value="Ford India"></property>
+        <property name="salary" value="50000.0"></property>
+<!--        <property name="address" ref="address"></property> -->
+        <constructor-arg name="address" ref="address"></constructor-arg>
+    </bean>
+
+    <bean name="employee2" class="Employee" scope="prototype">
+        <property name="id" value="5"></property>
+        <property name="name" value="Ford India 5"></property>
+        <property name="salary" value="40000.0"></property>
+    </bean>
+    <bean name="address" class="Address">
+        <property name="doorNo" value="22"></property>
+        <property name="city" value="Chennai"></property>
+        <property name="pincode" value="560099"></property>
+    </bean>
+
+</beans>
